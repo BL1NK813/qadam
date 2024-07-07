@@ -1,5 +1,8 @@
 let tg = window.Telegram.WebApp;
 tg.expand(2000);
+setTimeout(function() {
+    tg.expand();
+}, 2000);
 
 /*Предзагрузка страницы*/
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(intervalId);
         document.getElementById('progress_few').style.display = 'none';
         document.querySelector('.container').style.display = 'block';
-    }, 1);
+    }, 50);
 });
 

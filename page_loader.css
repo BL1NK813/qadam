@@ -14,7 +14,7 @@
     width: 0;
     height: 10px;
     border-radius: 15px;
-    animation: progresss 0.700s linear forwards;
+    animation: progresss 1.85s linear forwards;
 }
 
 @keyframes progresss {
@@ -38,8 +38,10 @@
 
 .loading_text {
     top: 500%;
+    font-size: 23px;
 }
 
 .loading_subtext {
     top: 1200%;
+    font-size: 19px;
 }

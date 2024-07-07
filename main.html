@@ -2,28 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-    <title></title>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
+    <title>Qadam</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+
+    <link rel="stylesheet" href="page_loader.css">
+    <script src="page_loader.js" defer></script>
+
+    <link rel="stylesheet" href="navigation.css">
+    <script src="navigation.js" defer></script>
+    <link rel="stylesheet" href="task_collection.css">
+    <script src="task_collection.js" defer></script>
+    <link rel="stylesheet" href="profile.css">
+    <script src="profile.js" defer></script>
+    <link rel="stylesheet" href="fren.css">
+    <script src="fren.js" defer></script>
+
+    <link rel="stylesheet" href="notification.css">
+    <script src="notification.js" defer></script>
 
     <link rel="stylesheet" href="coin_progress.css">
-    <link rel="stylesheet" href="frens.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="notification.css">
-    <link rel="stylesheet" href="page_loader.css">
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="task_collection.css">
-
-    <script src="telegram-web-app.js" defer></script>
     <script src="coin_progress.js" defer></script>
-    <script src="frens.js" defer></script>
-    <script src="main.js" defer></script>
-    <script src="navigation.js" defer></script>
-    <script src="notification.js" defer></script>
-    <script src="page_loader.js" defer></script>
-    <script src="profile.js" defer></script>
-    <script src="task_collection.js" defer></script>
-    <script src="telegram-web-app.js" defer></script>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
@@ -37,9 +40,9 @@
     <div class="content">
         <div class="nav-content" id="main">
             <div class="avatar">
-                <span class="user_avatar" id="user_avatar_id"><img src="dicpic/avatar.png" alt="avatar"></span>
-                <span class="tg_name" id="tg_name_id"></span>
-                <span class="qadam_logo"><img src="dicpic/main.png" alt="main"></span>
+                <span class="avatar1" id="avatar1_id"><img src="dicpic/avatar.png" alt=""></span>
+                <span class="tg_name" id="tg_name_id">ABOBA1337</span>
+                <span class="avatar2"><img src="dicpic/main.png" alt="main"></span>
             </div>
             <div class="avatar_pod">
                 <div class="avatar_pod1">
@@ -74,80 +77,83 @@
 
             <div class="energy-info">
                 <span class="energy_tap"><img src="dicpic/energy.png" alt="energy">500/500</span>
-                <button class="upg_button" data-tab="upg"><img src="dicpic/boost.png" alt="boost">Улучшения</button>
+                <button class="upg-button" data-tab="upg"><img src="dicpic/boost.png" alt="boost">Улучшения</button>
+                <!--<div class="upg-content">
+                    <div class="upg_tap">111</div>
+                    <div class="upg_energy">222</div>
+                    <div class="boost">333</div>
+                </div>-->
             </div>
         </div>
 
         <div class="nav-content" id="task">
             <div class="task_text"><h1>Задания</h1></div>
-            <div class="combo_task"><p class="combo_task_p1">Комбо недели:</p>
-                <div class="combo_task_coin" id="combo_task_id1"></div>
-                <div class="combo_task_coin" id="combo_task_id2"></div>
-                <div class="combo_task_coin" id="combo_task_id3"></div>
-                <p class="combo_task_p2">+1,000</p>
+            <div class="task_combo"><p>Комбо недели:</p>
+                <div class="task_combo_text" id="task_combo_text1"></div>
+                <div class="task_combo_text" id="task_combo_text2"></div>
+                <div class="task_combo_text" id="task_combo_text3"></div>
+                <p>+1,000<!--<img src="dicpic/coin.png" alt="coin">--></p>
             </div>
             <div class="combo_cart">
                 <div class="combo_cart1" id="combo_cart_id1"></div>
                 <div class="combo_cart2" id="combo_cart_id2"></div>
                 <div class="combo_cart3" id="combo_cart_id3"></div>
             </div>
-            <div class="tasks_bar">
-                <button class="bar-button" data-tab="task_bar">Задания</button>
-                <button class="bar-button" data-tab="collection_bar">Коллекции</button>
+            <div class="task_bar">
+                <button class="bar-button active" data-tab="tasks_bar">Задания</button>
+                <button class="bar-button" data-tab="achieves_bar">Коллекционки</button>
             </div>
-            <div class="bar-content" id="task_bar">
-                <div class="task_list">
-                    <button class="task" id="task_1"></button>
-                    <button class="task" id="task_2"></button>
-                    <button class="task" id="task_3"></button>
-                    <button class="task" id="task_4"></button>
-                    <button class="task" id="task_5"></button>
-                    <button class="task" id="task_6"></button>
-                    <button class="task" id="task_7"></button>
-                    <button class="task" id="task_8"></button>
-                    <button class="task" id="task_9"></button>
-                </div>
-            </div>
-            <div class="bar-content" id="collection_bar">
-                <div class="collection_list">
-                    <button class="collection" id="collection_1"></button>
-                    <button class="collection" id="collection_2"></button>
-                    <button class="collection" id="collection_3"></button>
-                    <button class="collection" id="collection_4"></button>
-                    <button class="collection" id="collection_5"></button>
-                    <button class="collection" id="collection_6"></button>
-                    <button class="collection" id="collection_7"></button>
-                    <button class="collection" id="collection_8"></button>
-                    <button class="collection" id="collection_9"></button>
-                    <button class="collection" id="collection_10"></button>
-                    <button class="collection" id="collection_11"></button>
-                    <button class="collection" id="collection_12"></button>
+
+            <div class="bar-content" id="tasks_bar">
+                <div class="tasks_list">
+                    <button class="tasks" id="task_1"></button>
+                    <button class="tasks" id="task_2"></button>
+                    <button class="tasks" id="task_3"></button>
+                    <button class="tasks" id="task_4"></button>
+                    <button class="tasks" id="task_5"></button>
+                    <button class="tasks" id="task_6"></button>
+                    <button class="tasks" id="task_7"></button>
+                    <button class="tasks" id="task_8"></button>
+                    <button class="tasks" id="task_9"></button>
                 </div>
             </div>
         </div>
 
+        <div class="bar-content" id="achieves_bar">
+            <div class="achieves_list">
+                <button class="achieves" id="achieve_1"></button>
+                <button class="achieves" id="achieve_2"></button>
+                <button class="achieves" id="achieve_3"></button>
+                <button class="achieves" id="achieve_4"></button>
+                <button class="achieves" id="achieve_5"></button>
+                <button class="achieves" id="achieve_6"></button>
+                <button class="achieves" id="achieve_7"></button>
+                <button class="achieves" id="achieve_8"></button>
+                <button class="achieves" id="achieve_9"></button>
+                <button class="achieves" id="achieve_10"></button>
+                <button class="achieves" id="achieve_11"></button>
+                <button class="achieves" id="achieve_12"></button>
+            </div>
+            <!--<div class="achieves" id="achieve_7"></div>
+                <div class="achieves" id="achieve_8"></div>
+                <div class="achieves" id="achieve_9"></div>
+            </div>-->
+        </div>
+
         <div class="nav-content" id="frens">
             <div class="frens_text"><h1>Друзья</h1></div>
-                <div class="frens_list"><!--
-                    <div class="frens" id="fren1"></div>
-                    <div class="frens" id="fren2"></div>
-                    <div class="frens" id="fren3"></div>
-                    <div class="frens" id="fren4"></div>
-                    <div class="frens" id="fren5"></div>
-                    <div class="frens" id="fren6"></div>-->
-                </div>
+            <div class="frens_list">
+                <!-- Друзья содержимое здесь -->
+            </div>
         </div>
 
         <div class="nav-content" id="prof">
             <div class="prof_text"><h1>Профиль</h1></div>
             <div class="prof_list">
-                <span class="date_reg" id="data_reg_id">Дата регистрации:</span>
-                <span class="all_coin_all" id="all_coin_all_id">Общее количество монет:</span>
-                <span class="fren_inv" id="fren_inv_id">Приглашено друзей:</span>
-                <span class="fren_bonus" id="fren_bonus_id">Бонусы от друзей:</span>
-                <span class="all_coin_spend" id="all_coin_spend_id">Общее количество потраченных монет:</span>
+                <!-- Профиль содержимое здесь -->
             </div>
         </div>
+
     </div>
 
     <div class="navigation">
@@ -156,6 +162,6 @@
         <button class="nav-button" data-tab="frens">Друзья</button>
         <button class="nav-button" data-tab="prof">Профиль</button>
     </div>
+
 </div>
 </body>
-</html>
