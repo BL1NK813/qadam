@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Устанавливаем активную первую вкладку по умолчанию
     barButtons[0].classList.add('active');
     barContents[0].classList.add('active');
 });

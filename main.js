@@ -7,6 +7,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const coinsIncrement = 3;
     const coinsInSecond = 100;
 
+    const tg = window.Telegram.WebApp;
+
+    // Убедитесь, что SDK загружен
+    if (tg) {
+        // Получаем информацию о пользователе
+        const user = tg.initDataUnsafe.user;
+
+        if (user && user.username) {
+            // Вставляем username в элемент с id 'tg_name_id'
+            document.getElementById("tg_name_id").textContent =  user.first_name;
+
+            const userId = user.id;
+            saveUserIdToDatabase(userId); // Функция для отправки на сервер
+        } else {
+            // Если username не найден, показываем что-то другое
+            document.getElementById("tg_name_id").textContent = "Неизвестный";
+        }
+    } else {
+        console.error("Telegram Web Apps SDK не найден.");
+    }
+
+    function saveUserIdToDatabase(userId) {
+        // URL вашего локального сервера или временный адрес через ngrok
+        const url = 'https://41a7-84-54-92-163.ngrok-free.app'; // Пример ngrok адреса
+
+        // Данные для отправки на сервер (user_id)
+        const data = {
+            user_id: userId
+        };
+
+        // Опции запроса
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+
+        // Отправка запроса
+        fetch(url, options)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Данные успешно сохранены на сервере:', data);
+            })
+            .catch(error => {
+                console.error('Ошибка при сохранении данных на сервере:', error);
+            });
+    }
 
     // Устанавливаем интервал для восстановления энергии каждую секунду
     setInterval(restoreEnergy, 1030);
@@ -59,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.style.webkitTransform = 'scale(1)';
     }
 
-    function handleClick(event) {
+    async function handleClick(event) {
         if (isMouseDown && !isClickHandled && energyTap >= energyTapDecrement) {
             isClickHandled = true; // Устанавливаем флаг обработки клика
             energyTap -= energyTapDecrement;
@@ -69,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateFarmCoinsDisplay();
             showCoinNotification(`+${coinsIncrement}`, event.clientX, event.clientY);
             increaseProgress();
-
             // Сбрасываем флаг обработки клика через короткое время, чтобы позволить новым кликам обрабатываться
             setTimeout(() => {
                 isClickHandled = false;
@@ -88,23 +141,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function increaseFarmCoinsPassively() {
-        const farmCoinsElement = document.getElementById('farm_coins_id');
+        const farmCoinsElement = document.querySelector('.farm_coins');
         const currentFarmCoins = parseInt(farmCoinsElement.textContent) || 0;
-        farmCoinsElement.innerHTML = `<img src="dicpic/coin.png" alt="coin">${currentFarmCoins + 1}`;
+        const energyTapElement = document.querySelector('.farm_coins');
+        const imgElement = energyTapElement.querySelector('img');
+        const imgUrl = imgElement.getAttribute('src');
+        farmCoinsElement.innerHTML = `<img src="${imgUrl}" alt="coin">${currentFarmCoins + 1}`;
     }
 
     function updateEnergyDisplay() {
         const energyDisplay = document.querySelector('.energy_tap');
-        energyDisplay.innerHTML = `<img src="dicpic/energy.png" alt="coin">${energyTap}/${energyTapMax}`;
+        const energyTapElement = document.querySelector('.energy_tap');
+        const imgElement = energyTapElement.querySelector('img');
+        const imgUrl = imgElement.getAttribute('src');
+        energyDisplay.innerHTML = `<img src="${imgUrl}" alt="energy">${energyTap}/${energyTapMax}`;
     }
 
     function updateCoinsProgressDisplay() {
         const coinsProgressDisplay = document.querySelector('.farm_coins');
-        coinsProgressDisplay.innerHTML = `<img src="dicpic/coin.png" alt="coin">${coinsProgress}`;
+        const energyTapElement = document.querySelector('.farm_coins');
+        const imgElement = energyTapElement.querySelector('img');
+        const imgUrl = imgElement.getAttribute('src');
+        coinsProgressDisplay.innerHTML = `<img src="${imgUrl}" alt="coin">${coinsProgress}`;
     }
 
     function updateFarmCoinsDisplay() {
-        const farmCoinsElement = document.getElementById('farm_coins_id');
-        farmCoinsElement.innerHTML = `<img src="dicpic/coin.png" alt="coin">${parseInt(farmCoinsElement.textContent) || 0}`;
+        const farmCoinsElement = document.querySelector('.farm_coins');
+        const energyTapElement = document.querySelector('.farm_coins');
+        const imgElement = energyTapElement.querySelector('img');
+        const imgUrl = imgElement.getAttribute('src');
+        farmCoinsElement.innerHTML = `<img src="${imgUrl}" alt="coin">${parseInt(farmCoinsElement.textContent) || 0}`;
     }
 });
