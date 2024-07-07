@@ -1,0 +1,236 @@
+/*Запрещение выделения и тп ко всем эелемнтам*/
+* {
+    user-select: none; /* Запрещаем выделение текста */
+    -webkit-user-select: none; /* Для поддержки веб-браузерами, основанными на WebKit */
+    outline: none; /* Убираем обводку фокуса */
+    box-shadow: none; /* Убираем тень */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    touch-action: manipulation;
+    font-size: 100%;
+}
+
+/*Сама страница*/
+body, html {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url('dicpic/background.png');
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 100%;
+}
+
+.avatar {
+    border-radius: 10px 10px 3px 3px;
+    background-color: #000;
+    width: 90%;
+    height: 9%;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 100%;
+}
+
+.avatar1 img {
+    width: 30%;
+    height: 30%;
+    margin-left: 30%;
+}
+
+.avatar2 img {
+    width: 35%;
+    height: 7%;
+    margin-left: 52%;
+}
+
+.avatar_pod {
+    width: 90%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    margin: -3% 5% 3%;
+    justify-content: space-between;
+    font-size: 100%;
+}
+
+.avatar_pod1, .avatar_pod2, .avatar_pod3 {
+    border-radius: 3px 3px 10px 10px;
+    background-color: #000;
+    width: 30%;
+    height: 77%;
+    padding: 1%;
+    text-align: center;
+}
+
+.tap, .next_lvl, .passive {
+    top: 10%;
+    position: relative;
+    width: 100%;
+}
+
+.tap_coast, .next_lvl_coast, .passive_coast {
+    top: 10%;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.tap_coast img, .next_lvl_coast img, .passive_coast img {
+    margin-left: 3%;
+    width: 15%;
+    height: 15%;
+}
+
+.farm_coins {
+    border-radius: 6px;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    align-self: center;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-size: 150%;
+}
+
+.farm_coins img {
+    width: 12%;
+    height: 12%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.stage_pod1, .stage_pod2 {
+    font-size: 120%;
+}
+
+.coin_button {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    background: url('dicpic/dfd.png') no-repeat center;
+    background-size: contain;
+    margin-left: 18.5%;
+    margin-top: 15%;
+    margin-bottom: 3%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.coin_button:active {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+@keyframes pressAnimation {
+    0% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(0.8);
+    }
+    90% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.energy-info {
+    width: 90%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    margin-left: 1.2%;
+    justify-content: space-around;
+    color: #fff;
+    align-self: center;
+}
+
+.energy_tap {
+    width: 30%;
+    margin-left: 2%;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 120%;
+}
+
+.energy_tap img{
+    margin: 5px;
+    width: 15%;
+    height: 15%;
+    border: none;
+    align-items: center;
+}
+
+.upg_button {
+    width: 35%;
+    align-items: center;
+    display: flex;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-size: 120%;
+    margin-left: 30%;
+}
+
+.upg_button img {
+    margin: 5px;
+    width: 22%;
+    height: 22%;
+    align-items: center;
+}
+
+/*
+.upgrade_text {
+    border-radius: 10px 10px 3px 3px;
+    background-color: #000;
+    width: 280%;
+    height: 67%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: -93%;
+    margin-top: 17%;
+}
+
+.upgrade_text h1 {
+    margin-left: 33%;
+}*/
+
+
+
+
+.upg_content {
+    display: none;
+}
+
+.upg_content.active {
+    display: block;
+}

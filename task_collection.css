@@ -1,0 +1,235 @@
+.task_text {
+    border-radius: 10px 10px 3px 3px;
+    background-color: #000;
+    width: 200%;
+    height: 8.7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: -49%;
+    margin-top: 10.5%;
+    margin-bottom: 8%;
+
+}
+
+/*.task_text h1 {
+    margin-left: 37%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}*/
+
+.combo_task {
+    width: 200%;
+    height: 6%;
+    margin-left: -49%;
+    border-radius: 6px;
+    align-items: center;
+    background-color: #000;
+    display: flex;
+}
+
+.combo_task_p1 {
+    margin-left: 5%;
+    margin-right: 4%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.combo_task_coin {
+    margin-left: 2%;
+    width: 3%;
+    height: 25%;
+    border-radius: 18px;
+    border: 2px solid #f0f0f0;
+    background-color: silver;
+}
+
+.combo_task_p2 {
+    width: 30%;
+    text-align: center;
+}
+
+.combo_cart {
+    display: grid;
+    grid-template-columns: repeat(3, 47%);
+    grid-template-rows: repeat(1, 92px);
+    margin: 9% 20% 7% -43%;
+    gap: 10px;
+}
+
+.combo_cart1, .combo_cart2, .combo_cart3 {
+    border-radius: 6px;
+    border: 3px solid #fff;
+}
+
+.tasks_bar {
+    width: 100%;
+    height: 4.5%;
+    margin-top: 13%;
+    margin-left: -49%;
+    display: flex;
+    background-color: #000;
+    border-radius: 6px;
+    padding: 4%;
+    font-size: 90%;
+}
+
+.bar-button {
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    flex: 1;
+}
+
+.bar-button.active {
+    background-color: orangered;
+}
+
+[data-tab="task_bar"], [data-tab="collection_bar"] {
+    display: flex;
+}
+
+.bar-content {
+    display: none;
+}
+
+.bar-content.active {
+    display: block;
+}
+
+.task_list {
+    grid-template-columns: repeat(3, 28.5%);
+    grid-template-rows: repeat(3, 28.5%);
+}
+
+.collection_list {
+    grid-template-columns: repeat(3, 28.5%);
+    grid-template-rows: repeat(4, 28.5%);
+    overflow-y: scroll;
+}
+
+.task_list, .collection_list {
+    margin-top: 7%;
+    display: grid;
+    margin-left: -40%;
+    gap: 8px;
+    width: 200%;
+    height: 320px;
+}
+
+.task, .collection {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 6px;
+     border-color: #4caf50;
+    background-color: #000;
+ }
+
+
+#combo_cart_id1, #combo_cart_id2, #combo_cart_id3, #task_1, #task_2, #task_3, #task_4, #task_5, #task_6, #task_7, #task_8, #task_9, #collection_1, #collection_2, #collection_3, #collection_4, #collection_5, #collection_6, #collection_7, #collection_8, #collection_9, #collection_10, #collection_11, #collection_12 {
+    height: 100%;
+    background-size: cover;
+}
+
+#combo_cart_id1 {
+    background-image: url('/static/dicpic/combo_cart1.png');
+}
+
+#combo_cart_id2 {
+    background-image: url('/static/dicpic/combo_cart2.png');
+}
+
+#combo_cart_id3 {
+    background-image: url('/static/dicpic/combo_cart3.png');
+}
+
+#task_1 {
+    background-image: url('/static/dicpic/task_1.png');
+}
+
+#task_2 {
+    background-image: url('/static/dicpic/task_2.png');
+}
+
+#task_3 {
+    background-image: url('/static/dicpic/task_3.png');
+}
+
+#task_4 {
+    background-image: url('/static/dicpic/task_4.png');
+}
+
+#task_5 {
+    background-image: url('/static/dicpic/task_5.png');
+}
+
+#task_6 {
+    background-image: url('/static/dicpic/task_6.png');
+}
+
+#task_7 {
+    background-image: url('/static/dicpic/task_7.png');
+}
+
+#task_8 {
+    background-image: url('/static/dicpic/task_8.png');
+}
+
+#task_9 {
+    background-image: url('/static/dicpic/task_9.png');
+}
+
+#collection_1 {
+    background-image: url('/static/dicpic/collection_1.png');
+}
+
+#collection_2 {
+    background-image: url('/static/dicpic/collection_2.png');
+}
+
+#collection_3 {
+    background-image: url('/static/dicpic/collection_3.png');
+}
+
+#collection_4 {
+    background-image: url('/static/dicpic/collection_4.png');
+}
+
+#collection_5 {
+    background-image: url('/static/dicpic/collection_5.png');
+}
+
+#collection_6 {
+    background-image: url('/static/dicpic/collection_6.png');
+}
+
+#collection_7 {
+    background-image: url('/static/dicpic/collection_7.png');
+}
+
+#collection_8 {
+    background-image: url('/static/dicpic/collection_8.png');
+}
+
+#collection_9 {
+    background-image: url('/static/dicpic/collection_9.png');
+}
+
+#collection_10 {
+    background-image: url('/static/dicpic/collection_10.png');
+}
+
+#collection_11 {
+    background-image: url('/static/dicpic/collection_11.png');
+}
+
+#collection_12 {
+    background-image: url('/static/dicpic/collection_12.png');
+}

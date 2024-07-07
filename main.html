@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <title>Qadam</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='coin_progress.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='frens.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='notification.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='page_loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='task_collection.css') }}">
+
+    <script src="{{ url_for('static', filename='telegram-web-app.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='coin_progress.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='frens.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='navigation.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='notification.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='page_loader.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='profile.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='task_collection.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='telegram-web-app.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='') }}" defer></script>
+</head>
+
+<body>
+<div id="progress_few" class="progress_few1">
+    <div class="color"></div>
+    <div id="loading_text" class="loading_text">Загружаемся<span id="dots"></span></div>
+    <div id="loading_subtext" class="loading_subtext">Пожалуйста, подождите секунду</div>
+</div>
+
+<div class="container" style="display: none">
+    <div class="content">
+        <div class="nav-content" id="main">
+            <div class="avatar">
+                <span class="avatar1" id="avatar1_id"><img src="{{ url_for('static', filename='dicpic/avatar.png') }}" alt="avatar"></span>
+                <span class="tg_name" id="tg_name_id"></span>
+                <span class="avatar2" id="tg_user_photo_id"><img src="{{ url_for('static', filename='dicpic/main.png') }}" alt="main"></span>
+            </div>
+            <div class="avatar_pod">
+                <div class="avatar_pod1">
+                    <div class="tap_coast" id="tap_coast_id">+ 3<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="tap">за тап</div>
+                </div>
+                <div class="avatar_pod2">
+                    <div class="next_lvl_coast" id="next_lvl_id">10<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="next_lvl">для апа</div>
+                </div>
+                <div class="avatar_pod3">
+                    <div class="passive_coast" id="passive_coast_id">100<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="passive">в час</div>
+                </div>
+            </div>
+
+            <div class="farm_coin">
+                <div class="farm_coins" id="farm_coins_id"><img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin">0</div>
+            </div>
+
+            <div class="stage">
+                <div class="stage_pod1" id="stage_pod_id1">0/10</div>
+                <div class="stage_pod2" id="stage_pod_id2">0/10</div>
+            </div>
+            <div class="progress_bar">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <div class="coin">
+                <button class="coin_button" id="coin-button" onclick="increaseProgress()"></button>
+            </div>
+
+            <div class="energy-info">
+                <span class="energy_tap"><img src="{{ url_for('static', filename='dicpic/energy.png') }}" alt="energy">500/500</span>
+                <button class="upg_button" data-tab="upg"><img src="{{ url_for('static', filename='dicpic/boost.png') }}" alt="boost">Улучшения</button>
+            </div>
+        </div>
+
+        <div class="nav-content" id="task">
+            <div class="task_text"><h1>Задания</h1></div>
+            <div class="combo_task"><p class="combo_task_p1">Комбо недели:</p>
+                <div class="combo_task_coin" id="combo_task_id1"></div>
+                <div class="combo_task_coin" id="combo_task_id2"></div>
+                <div class="combo_task_coin" id="combo_task_id3"></div>
+                <p class="combo_task_p2">+1,000</p>
+            </div>
+            <div class="combo_cart">
+                <div class="combo_cart1" id="combo_cart_id1"></div>
+                <div class="combo_cart2" id="combo_cart_id2"></div>
+                <div class="combo_cart3" id="combo_cart_id3"></div>
+            </div>
+            <div class="tasks_bar">
+                <button class="bar-button" data-tab="task_bar">Задания</button>
+                <button class="bar-button" data-tab="collection_bar">Коллекции</button>
+            </div>
+
+            <div class="bar-content" id="task_bar">
+                <div class="task_list">
+                    <button class="task" id="task_1"></button>
+                    <button class="task" id="task_2"></button>
+                    <button class="task" id="task_3"></button>
+                    <button class="task" id="task_4"></button>
+                    <button class="task" id="task_5"></button>
+                    <button class="task" id="task_6"></button>
+                    <button class="task" id="task_7"></button>
+                    <button class="task" id="task_8"></button>
+                    <button class="task" id="task_9"></button>
+                </div>
+            </div>
+
+            <div class="bar-content" id="collection_bar">
+                <div class="collection_list">
+                    <button class="collection" id="collection_1"></button>
+                    <button class="collection" id="collection_2"></button>
+                    <button class="collection" id="collection_3"></button>
+                    <button class="collection" id="collection_4"></button>
+                    <button class="collection" id="collection_5"></button>
+                    <button class="collection" id="collection_6"></button>
+                    <button class="collection" id="collection_7"></button>
+                    <button class="collection" id="collection_8"></button>
+                    <button class="collection" id="collection_9"></button>
+                    <button class="collection" id="collection_10"></button>
+                    <button class="collection" id="collection_11"></button>
+                    <button class="collection" id="collection_12"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-content" id="frens">
+            <div class="frens_text"><h1>Друзья</h1></div>
+                <div class="frens_list"><!--
+                    <div class="frens" id="fren1"></div>
+                    <div class="frens" id="fren2"></div>
+                    <div class="frens" id="fren3"></div>
+                    <div class="frens" id="fren4"></div>
+                    <div class="frens" id="fren5"></div>
+                    <div class="frens" id="fren6"></div>-->
+                </div>
+        </div>
+
+        <div class="nav-content" id="prof">
+            <div class="prof_text"><h1>Профиль</h1></div>
+            <div class="prof_list">
+                <!-- Профиль содержимое здесь -->
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" data-tab="main">Главная</button>
+        <button class="nav-button" data-tab="task">Задания</button>
+        <button class="nav-button" data-tab="frens">Друзья</button>
+        <button class="nav-button" data-tab="prof">Профиль</button>
+    </div>
+</div>
+</body>
+</html>

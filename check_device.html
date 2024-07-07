@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Check</title>
+    <style>
+        .hzhz {
+            background-image: url('static/dicpic/hz_vert.png');
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; /* Change to column to stack items vertically */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            text-align: center;
+        }
+
+        .pic img{
+            margin-top: 3%;
+            width: 30%;
+
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            text-align: center;
+        }
+
+        p{
+            margin-top: -10%;
+        }
+
+        a, p {
+            width: 70%;
+            color: #fff;
+            font-size: 150%;
+            text-shadow:
+                    -2px -2px 0 #000,
+                    2px -2px 0 #000,
+                    -2px 2px 0 #000,
+                    2px 2px 0 #000,
+                    -2px 0 0 #000,
+                    2px 0 0 #000,
+                    0 -2px 0 #000,
+                    0 2px 0 #000;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function isMobileDevice() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!isMobileDevice()) {
+            // Если устройство не мобильное, отображаем сообщение или QR-код
+            document.body.innerHTML = `
+                    <div class="hzhz">
+                        <p>Данное приложение доступно только с телефона.<br>Пожалуйста отсканируйте QR-код ниже на своем телефоне</p>
+
+                        <div class="pic">
+                            <img src="dicpic/Qadam.png" alt="Qadam">
+                        </div>
+
+                        <a href="https://t.me/web3_easily_bot">@web3_easily_bot<a>
+                    </div>
+                `;
+        } else {
+            window.location.href = '{{ url_for(\'templates\', filename=\'main.html\') }}';
+        }
+    });
+</script>
+</body>
+</html>
