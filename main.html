@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-    <title>Qadam</title>
+    <title></title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='coin_progress.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='frens.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='navigation.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='notification.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='page_loader.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='task_collection.css') }}">
+    <link rel="stylesheet" href="coin_progress.css">
+    <link rel="stylesheet" href="frens.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="notification.css">
+    <link rel="stylesheet" href="page_loader.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="task_collection.css">
 
-    <script src="{{ url_for('static', filename='telegram-web-app.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='coin_progress.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='frens.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='navigation.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='notification.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='page_loader.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='profile.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='task_collection.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='telegram-web-app.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='') }}" defer></script>
+    <script src="telegram-web-app.js" defer></script>
+    <script src="coin_progress.js" defer></script>
+    <script src="frens.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="navigation.js" defer></script>
+    <script src="notification.js" defer></script>
+    <script src="page_loader.js" defer></script>
+    <script src="profile.js" defer></script>
+    <script src="task_collection.js" defer></script>
+    <script src="telegram-web-app.js" defer></script>
 </head>
 
 <body>
@@ -38,27 +37,27 @@
     <div class="content">
         <div class="nav-content" id="main">
             <div class="avatar">
-                <span class="avatar1" id="avatar1_id"><img src="{{ url_for('static', filename='dicpic/avatar.png') }}" alt="avatar"></span>
+                <span class="user_avatar" id="user_avatar_id"><img src="dicpic/avatar.png" alt="avatar"></span>
                 <span class="tg_name" id="tg_name_id"></span>
-                <span class="avatar2" id="tg_user_photo_id"><img src="{{ url_for('static', filename='dicpic/main.png') }}" alt="main"></span>
+                <span class="qadam_logo"><img src="dicpic/main.png" alt="main"></span>
             </div>
             <div class="avatar_pod">
                 <div class="avatar_pod1">
-                    <div class="tap_coast" id="tap_coast_id">+ 3<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="tap_coast" id="tap_coast_id">+ 3<img src="dicpic/coin.png" alt="coin"></div>
                     <div class="tap">за тап</div>
                 </div>
                 <div class="avatar_pod2">
-                    <div class="next_lvl_coast" id="next_lvl_id">10<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="next_lvl_coast" id="next_lvl_id">10<img src="dicpic/coin.png" alt="coin"></div>
                     <div class="next_lvl">для апа</div>
                 </div>
                 <div class="avatar_pod3">
-                    <div class="passive_coast" id="passive_coast_id">100<img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin"></div>
+                    <div class="passive_coast" id="passive_coast_id">100<img src="dicpic/coin.png" alt="coin"></div>
                     <div class="passive">в час</div>
                 </div>
             </div>
 
             <div class="farm_coin">
-                <div class="farm_coins" id="farm_coins_id"><img src="{{ url_for('static', filename='dicpic/coin.png') }}" alt="coin">0</div>
+                <div class="farm_coins" id="farm_coins_id"><img src="dicpic/coin.png" alt="coin">0</div>
             </div>
 
             <div class="stage">
@@ -74,8 +73,8 @@
             </div>
 
             <div class="energy-info">
-                <span class="energy_tap"><img src="{{ url_for('static', filename='dicpic/energy.png') }}" alt="energy">500/500</span>
-                <button class="upg_button" data-tab="upg"><img src="{{ url_for('static', filename='dicpic/boost.png') }}" alt="boost">Улучшения</button>
+                <span class="energy_tap"><img src="dicpic/energy.png" alt="energy">500/500</span>
+                <button class="upg_button" data-tab="upg"><img src="dicpic/boost.png" alt="boost">Улучшения</button>
             </div>
         </div>
 
@@ -96,7 +95,6 @@
                 <button class="bar-button" data-tab="task_bar">Задания</button>
                 <button class="bar-button" data-tab="collection_bar">Коллекции</button>
             </div>
-
             <div class="bar-content" id="task_bar">
                 <div class="task_list">
                     <button class="task" id="task_1"></button>
@@ -110,7 +108,6 @@
                     <button class="task" id="task_9"></button>
                 </div>
             </div>
-
             <div class="bar-content" id="collection_bar">
                 <div class="collection_list">
                     <button class="collection" id="collection_1"></button>
@@ -144,7 +141,11 @@
         <div class="nav-content" id="prof">
             <div class="prof_text"><h1>Профиль</h1></div>
             <div class="prof_list">
-                <!-- Профиль содержимое здесь -->
+                <span class="date_reg" id="data_reg_id">Дата регистрации:</span>
+                <span class="all_coin_all" id="all_coin_all_id">Общее количество монет:</span>
+                <span class="fren_inv" id="fren_inv_id">Приглашено друзей:</span>
+                <span class="fren_bonus" id="fren_bonus_id">Бонусы от друзей:</span>
+                <span class="all_coin_spend" id="all_coin_spend_id">Общее количество потраченных монет:</span>
             </div>
         </div>
     </div>
